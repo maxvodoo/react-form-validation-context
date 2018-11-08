@@ -18,6 +18,10 @@ export const makeForm = (
           ? this.setState({ isValid: false })
           : null
     };
+    
+    reset() {
+      resetErrors();
+    }
 
     componentWillMount() {
       resetErrors();
