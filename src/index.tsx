@@ -31,6 +31,10 @@ const resetErrors = () => {
   showErrors = {};
 };
 
+const reset = () => {
+  showErrors = {};
+};
+
 const setError: ISetError = (k, errors) => {
   inputErrors[k] = errors;
 };
@@ -56,6 +60,6 @@ export const withForm = makeWithForm(
 
 export const FormErrors = makeFormErrors(Consumer, getErrors);
 
-export const Form = makeForm(Provider, resetErrors);
+export const Form = makeForm(Provider, resetErrors, reset);
 
 export { validators };
