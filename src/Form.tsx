@@ -6,7 +6,8 @@ export interface IFormCallback {
 
 export const makeForm = (
   Provider: React.ComponentType<React.ProviderProps<any>>,
-  resetErrors: () => void
+  resetErrors: () => void,
+  reset: () => void,
 ): React.ComponentClass<IFormCallback, {}> => {
   class Form extends React.Component<IFormCallback, {}> {
     state = {
@@ -19,8 +20,8 @@ export const makeForm = (
           : null
     };
     
-    reset() {
-      resetErrors();
+    resetForm() {
+      reset();
     }
 
     componentWillMount() {
